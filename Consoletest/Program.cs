@@ -209,27 +209,44 @@ namespace consoletest
             public string name = "a";
         }
 
+
+
         public static void Main(string[] args)
         {
-//            var str = @"{
-//    '$types':{
-//        'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35':'1',
-//        'System.Diagnostics.Process, System, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089':'2',
-//        'System.Diagnostics.ProcessStartInfo, System, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089':'3'
-//    },
-//    '$type':'1',
-//    'ObjectInstance':{
-//        '$type':'2',
-//        'StartInfo':{
-//            '$type':'3',
-//            'FileName':'cmd',
-//            'Arguments':'/c notepad'
-//        }
-//    },
-//    'MethodName':'Start'
-//}".Replace("'","\"");
+            string s = "{\"Name\":\"aaaaaa\",\"Age\":10,\"dob\":\"2000-01-01 00:00:00Z\",\"inner\":{\"prop\":30},\"arr\":[1,{\"a\":2},3,4,5,6]}";
+            dynamic d = JSON.ToDynamic(s);
 
-//            var ooo = JSON.ToObject(str, new JSONParameters { BlackListTypeChecking = false });
+            d.name = "aaa";
+            var dN = d.Name;
+
+            d.X = "bbb";
+            var dx = d.x;
+        }
+
+        public static void Main_bak(string[] args)
+        {
+
+      
+
+            //            var str = @"{
+            //    '$types':{
+            //        'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35':'1',
+            //        'System.Diagnostics.Process, System, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089':'2',
+            //        'System.Diagnostics.ProcessStartInfo, System, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089':'3'
+            //    },
+            //    '$type':'1',
+            //    'ObjectInstance':{
+            //        '$type':'2',
+            //        'StartInfo':{
+            //            '$type':'3',
+            //            'FileName':'cmd',
+            //            'Arguments':'/c notepad'
+            //        }
+            //    },
+            //    'MethodName':'Start'
+            //}".Replace("'","\"");
+
+            //            var ooo = JSON.ToObject(str, new JSONParameters { BlackListTypeChecking = false });
 
 
             var p = new Point(0, 1);
